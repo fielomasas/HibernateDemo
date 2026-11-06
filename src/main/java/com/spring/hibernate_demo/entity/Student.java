@@ -7,6 +7,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 
+/**
+ * Entity class representing a Student.
+ * This class is mapped to the "student" table in the database.
+ */
 @Entity
 @Table(name = "student")
 public class Student {

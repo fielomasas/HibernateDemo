@@ -8,6 +8,10 @@ import jakarta.transaction.Transactional;
 import java.util.List;
 import jakarta.persistence.TypedQuery;
 
+/**
+ * Implementation of the StudentDao interface 
+ * for performing CRUD operations on Student entities.
+ */
 @Repository 
 public class StudentDaoImplement implements StudentDao {
 
@@ -75,7 +79,8 @@ public class StudentDaoImplement implements StudentDao {
     @Transactional
     public int deleteAll() {
         // Create a query to delete all student entities from the database
-        return entityManager.createQuery("DELETE FROM Student").executeUpdate();
+        return entityManager.createQuery(
+            "DELETE FROM Student").executeUpdate();
     }
 
 }

@@ -8,6 +8,10 @@ import com.spring.hibernate_demo.dao.StudentDao;
 import com.spring.hibernate_demo.entity.Student;
 import java.util.List;
 
+/**
+ * Main application class for the Hibernate Demo application.
+ * This class is responsible for bootstrapping the Spring Boot application.
+ */
 @SpringBootApplication
 public class HibernateDemoApplication {
 
@@ -28,6 +32,10 @@ public class HibernateDemoApplication {
 		};
 	}
 
+	/**
+	 * Creates a new student and saves it to the database.
+	 * @param studentDao the StudentDao instance used for database operations
+	 */
 	private void createStudent(StudentDao studentDao) {
 		// Create a student object
 		System.out.println("Creating new student object...");
@@ -43,6 +51,10 @@ public class HibernateDemoApplication {
 		System.out.println("Saved! Generated id: " + student.getId());
 	}
 	
+	/**
+	 * Reads a student from the database based on its ID.
+	 * @param studentDao the StudentDao instance used for database operations
+	 */
 	private void readStudent(StudentDao studentDao) {
 		// Retrieve student based on the id
 		System.out.println("Finding student with id: 2");
@@ -52,6 +64,10 @@ public class HibernateDemoApplication {
 		System.out.println("Found the student: " + myStudent);
 	}
 
+	/**
+	 * Queries and displays all students from the database.
+	 * @param studentDao the StudentDao instance used for database operations
+	 */
 	private void queryForStudents(StudentDao studentDao) {
 		// Retrieve all students
 		System.out.println("Retrieving all students...");
@@ -63,6 +79,11 @@ public class HibernateDemoApplication {
 		}
 	}
 
+	/**
+	 * Queries and displays students with a 
+	 * specific last name from the database.
+	 * @param studentDao the StudentDao instance used for database operations
+	 */
 	private void queryForStudentsByLastName(StudentDao studentDao) {
 		// Retrieve students with last name "Lacuarin"
 		System.out.println("Retrieving students with last name 'Lacuarin'...");
@@ -74,6 +95,10 @@ public class HibernateDemoApplication {
 		}
 	}
 
+	/**
+	 * Updates a student's information in the database.
+	 * @param studentDao the StudentDao instance used for database operations
+	 */
 	private void updateStudent(StudentDao studentDao) {
 		// Retrieve student based on the id
 		int studentId = 3;
@@ -92,7 +117,10 @@ public class HibernateDemoApplication {
 		System.out.println("Updated student: " + myStudent);
 	}
 
-	// Delete a student
+	/**
+	 * Deletes a student from the database based on its ID.
+	 * @param studentDao the StudentDao instance used for database operations
+	 */
 	private void deleteStudent(StudentDao studentDao) {
 		int studentId = 4;
 		System.out.println("Deleting id: " + studentId);
@@ -101,6 +129,10 @@ public class HibernateDemoApplication {
 		studentDao.delete(studentId);
 	}
 
+	/**
+	 * Deletes all students from the database.
+	 * @param studentDao the StudentDao instance used for database operations
+	 */
 	private void deleteAllStudents(StudentDao studentDao) {
 		System.out.println("Deleting all students...");
 		int numRowsDeleted = studentDao.deleteAll();

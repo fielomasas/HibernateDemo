@@ -107,7 +107,6 @@ public class AppDaoImplement implements AppDao{
         return entityManager.find(InstructorDetail.class, id);
     }
 
-
     /**    (non-Javadoc)
      * This method deletes an InstructorDetail entity by its ID.
      * Along with its Instructor
@@ -116,7 +115,8 @@ public class AppDaoImplement implements AppDao{
     // @Transactional
     // public void deleteInstructorDetailById(int id) {
     //     // Find the instructor detail by ID
-    //     InstructorDetail instructorDetail = entityManager.find(InstructorDetail.class, id);
+    //     InstructorDetail instructorDetail = entityManager.find(
+    //                                            InstructorDetail.class, id);
         
     //     // Remove the instructor detail
     //     entityManager.remove(instructorDetail);
@@ -165,7 +165,8 @@ public class AppDaoImplement implements AppDao{
     // public Instructor findInstructorByJoinFetch(int id) {
     //     // Create query
     //     TypedQuery<Instructor> query = entityManager.createQuery(
-    //         "SELECT i from Instructor i JOIN FETCH i.courses WHERE i.id=:data",
+    //         "SELECT i from Instructor i "
+    //         + "JOIN FETCH i.courses WHERE i.id=:data",
     //         Instructor.class);
     //     query.setParameter("data", id);
 

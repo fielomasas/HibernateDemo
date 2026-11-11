@@ -1,6 +1,5 @@
 package com.spring.hibernate_demo;
 
-import org.aspectj.apache.bcel.generic.Instruction;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,7 +14,6 @@ import com.spring.hibernate_demo.entity.InstructorDetail;
 import com.spring.hibernate_demo.entity.Course;
 import com.spring.hibernate_demo.dao.AppDaoImplement;
 
-import java.rmi.ServerRuntimeException;
 import java.util.List;
 
 /**
@@ -58,7 +56,7 @@ public class HibernateDemoApplication {
 		return runner -> {
 			// createInstructor(app);
 			// findInstructor(app);
-			// deleteInstructorWithCourses(app);
+			deleteInstructorWithCourses(app);
 			// findInstructorDetail(app);
 			// deleteInstructorDetail(app);
 			// createInstructorWithCourses(app);
@@ -105,7 +103,7 @@ public class HibernateDemoApplication {
 	 * @param app the DAO used for database operations
 	 */
 	private void findInstructor(AppDao app) {
-		int id = 1;
+		int id = 2;
 		System.out.println("Finding instructor with id: " + id);
 
 		Instructor ins = app.findInstructorById(id);
@@ -135,7 +133,7 @@ public class HibernateDemoApplication {
 	 */
 	private void deleteInstructorWithCourses(AppDao app) {
 		// Delete the instructor by ID
-		int id = 1;
+		int id = 21;
 		System.out.println("Deleting instructor with id: " + id);
 
 		app.deleteInstructorWithCoursesById(id);
@@ -149,7 +147,7 @@ public class HibernateDemoApplication {
 	 */
 	private void findInstructorDetail(AppDao app) {
 		// Find the instructor detail by ID
-		int id = 3;
+		int id = 21;
 
 		InstructorDetail insDetail = app.findInstructorDetailById(id);
 
